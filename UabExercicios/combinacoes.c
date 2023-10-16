@@ -2,8 +2,8 @@
 
 int main()
 {
-    int n=0, r=0, i=0, j = 1, produto=1;
-    printf("\nCalculo dos arranjos de N, R a R:");
+    int n=0, r=0, i=0, j = 0, arranjo = 0, produto=1, combinacoes = 0;
+    printf("\nCalculo das combinacoes de N, R a R:");
     printf("\nIndique N:");
     scanf("%d", &n);
 
@@ -17,14 +17,19 @@ int main()
 
     else{
         i = n - r + 1;
-        while( i <= n && j <= r){
-            produto *= i;
-            
-
-            printf("\n%d * %d = %d / %d = %d", );
-            i++;
+        j=1;
+        while( i <= n){
+            while(j <= r)  {
+                arranjo = produto * i;
+                combinacoes = arranjo/j;
+                printf("\n%d*%d=%d, %d/%d=%d", produto, i, arranjo, arranjo, j, combinacoes);
+                i++;
+                j++;
+                produto = combinacoes;
+            } 
+             
         }
-        printf("\nResultado: %d", arranjos); 
+        printf("\nResultado: %d", combinacoes); 
     }
        
 }
