@@ -26,13 +26,14 @@ void Sort(int v[], int n){
   }
 }
 
-int removeDups(int v[], int n){
+int RemoveDups(int v[], int n){
 int i, j;
-for (i = 0; i < n-1; i++){
-  while(i < n-1 && v[i] == v[i+1]){
-    for (j = i; j < n-1; j++){
-      v[j] = v[j+1];
-    }
+for (i = 0; i < n-1; i++)
+{
+  while(i < n-1 && v[i] == v[i+1])
+  {
+    for (j = i; j < n-1; j++)
+          v[j] = v[j+1];
      n--;
   }
 }
@@ -48,12 +49,12 @@ int main()
 
   for(i=0;i<1000;i++)
 		v[i]=randaux() % n;
-    
+
 	PrintInts(v,10,"\n");
 
 	Sort(v,1000);
 
-  removeDups(v, 1000);
+  RemoveDups(v, 1000);
 
   PrintInts(v,10,"\n");
 
