@@ -20,27 +20,14 @@ void Baralhar (int v[], int n){
         v[j] = aux;
     }
 }
-
 int main(){
-    int desperdicio,i=0,j=0, k=0, l=0, posicoes[64], num[4];
+    int desperdicio,i=0,j=0, k=0, l=0, posicoes[64];
     char operacao[DIMENSAO] ={'+','-','*','/'};
     char numero[DIMENSAO] = {'1','2','3','4'};
     char letra[DIMENSAO] = {'A','B','C','D'};
     char carta[BARALHO][DIMENSAO];
-    char strNum[12], *ptr;
-       
+
     scanf("%d", &desperdicio);
-    getchar();
-    fgets(strNum, 12, stdin );
-
-    ptr = (char *)strtok(strNum, " ");
-    while (ptr != NULL){
-        num[i]= atoi(ptr);
-        ptr = (char *) strtok(NULL," ");
-        i++;
-    }
-    
-
     for(i = 0; i < desperdicio; i++){
         randaux();
     }
@@ -68,22 +55,9 @@ int main(){
     printf("    [1] [2] [3] [4] [5] [6] [7] [8] \n");
     for(i = 0; i < 8; i++){
         printf("[%d] ", (i+1));
-        k=i;
-        while( k < BARALHO)
-        {    
-            j=0;
-            while(j<DIMENSAO)
-            {
-                if(((k/8)+ 1)==((int) num[j]/10) && (num[j]%10)==(i+1) && ((int) num[j]/10) > 0 && ((int) num[j]/10) <=8 && (num[j] % 10) <= 8)
-                {
-                    printf("%s ", carta[posicoes[k]]);
-                }
-                else
-                {
-                    printf("### ");
-                }
-                j++;
-            }
+        k = i;
+        while (k < BARALHO){
+            printf("%s ", carta[posicoes[k]]);
             k+=8;
         }
         printf("\n");

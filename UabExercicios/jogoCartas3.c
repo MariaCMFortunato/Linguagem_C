@@ -68,24 +68,62 @@ int main(){
     printf("    [1] [2] [3] [4] [5] [6] [7] [8] \n");
     for(i = 0; i < 8; i++){
         printf("[%d] ", (i+1));
-        k=i;
-        while( k < BARALHO)
-        {    
-            j=0;
-            while(j<DIMENSAO)
+        k = i;
+       while (k < BARALHO)
+         {
+            if(((k/8)+ 1) == ((int) num[0]/10) && (num[0] % 10) == (i +1))
             {
-                if(((k/8)+ 1)==((int) num[j]/10) && (num[j]%10)==(i+1) && ((int) num[j]/10) > 0 && ((int) num[j]/10) <=8 && (num[j] % 10) <= 8)
-                {
-                    printf("%s ", carta[posicoes[k]]);
-                }
-                else
+                if(((int) num[0]/10) < 0 || ((int) num[0]/10) > 8 || (num[0] % 10) > 8)
                 {
                     printf("### ");
                 }
-                j++;
+                else
+                {
+                    printf("%s ", carta[posicoes[k]]);
+                }
             }
+
+            else if (((k/8)+ 1) == ((int) num[1]/10) && (num[1] % 10) == (i +1))
+            {
+                if(((int) num[1]/10) < 0 || ((int) num[1]/10) > 8 || (num[1] % 10) > 8)
+                {
+                    printf("### ");
+                }
+                else
+                {
+                    printf("%s ", carta[posicoes[k]]);
+                }
+            }
+
+            else if (((k/8)+ 1) == ((int) num[2]/10) && (num[2] % 10) == (i +1) )
+            {
+                if(((int) num[2]/10) < 0 || ((int) num[2]/10) > 8 || (num[2] % 10) > 8)
+                {
+                    printf("### ");
+                }
+                else
+                {
+                    printf("%s ", carta[posicoes[k]]);
+                }
+            }
+
+            else if (((k/8)+ 1) == ((int) num[3]/10) && (num[3] % 10) == (i +1) )
+            {
+                if(((int) num[3]/10) < 0 || ((int) num[3]/10) > 8 || (num[3] % 10) > 8)
+                {
+                    printf("### ");
+                }
+                else
+                {
+                    printf("%s ", carta[posicoes[k]]);
+                }
+            }
+
+            else
+                printf("### ");
+
             k+=8;
         }
-        printf("\n");
+         printf("\n");
     }       
 } 
