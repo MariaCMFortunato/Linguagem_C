@@ -8,37 +8,37 @@ unsigned int randaux()
   return(((seed = seed * 214013L + 2531011L) >> 16) & 0x7fff);
 }
 
-void MergeSort2(int v[], int a, int meio, int b)
+void MergeSort2(int v[], int limiteInf, int meio, int limiteSup)
 {
     static int aux[MAXVECTOR];
     int i, j, k;
-    i = a;
+    i = limiteInf;
     j = meio;
-    k = a;
+    k = limiteInf;
    
-    while(k < b)
+    while(k < limiteSup)
     {
-        if(i < meio && (j >= b || v[i] <= v[j]))
+        if(i < meio && (j >= limiteSup || v[i] <= v[j]))
             aux[k++] = v[i++];
         else
             aux[k++] = v[j++];
     
     }
-    for(k = a; k < b; k++)
+    for(k = limiteInf; k < limiteSup; k++)
         v[k] = aux[k];
     
 }
 
 
-void MergeSort1(int v[], int a, int b)
+void MergeSort1(int v[], int limiteInf, int limiteSup)
 {
-    if(b - a < 2)
+    if(limiteSup - limiteInf < 2)
         return;
 
-    MergeSort1(v, a,(a + b) / 2);
-    MergeSort1(v,((a + b) / 2), b);
+    MergeSort1(v, limiteInf,(limiteInf + limiteSup) / 2);
+    MergeSort1(v,((limiteInf + limiteSup) / 2), limiteSup);
 
-    MergeSort2(v, a,(a + b) / 2, b);
+    MergeSort2(v, limiteInf,(limiteInf + limiteSup) / 2, limiteSup);
 }
 
 
