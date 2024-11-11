@@ -2,24 +2,32 @@
 
 int main()
 {
-    int k, i, aux, n;
-    double e;
+    int k, i = 1, n = 1;
+    double aux = 1, e = 0.0;
 
     scanf("%d", &k);
 
-    while (n <= k)
+    if (k != 0)
     {
-        aux = 1;
-        i = 1;
-        while (i <= n)
+        e = 1;
+        while (n <= k)
         {
-            aux *= i;
-            i++;
-            printf("aux: %d - i: %d ", aux, i);
+            i = 1;
+            while (i <= n)
+            {
+                aux *= i;
+                i++;
+            }
+            aux = 1 / aux;
+            e += aux;
+            aux = 1;
+            n++;
         }
-        aux = 1 / aux;
-        e += aux;
-        n++;
     }
+    else
+    {
+        e = 1;
+    }
+
     printf("%.16g", e);
 }
