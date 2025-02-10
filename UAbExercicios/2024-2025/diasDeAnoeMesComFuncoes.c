@@ -4,7 +4,6 @@ int Bissexto(int ano)
 {
     return ano % 400 == 0 || (ano % 4 == 0 && ano % 100 != 0);
 }
-
 int DiasDoMes(int mes, int ano)
 {
     if ((mes == 2))
